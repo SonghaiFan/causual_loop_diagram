@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perspectiva Causal Loop Diagram</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/cytoscape@latest/dist/cytoscape.min.js"></script>
     <script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>
@@ -12,65 +12,57 @@
     <script src="https://unpkg.com/layout-base/layout-base.js"></script>
     <script src="https://unpkg.com/cose-base/cose-base.js"></script>
     <script src="https://unpkg.com/cytoscape-fcose/cytoscape-fcose.js"></script>
+  </head>
 
-</head>
-
-<body class="flex h-screen overflow-hidden">
-
+  <body style="display: flex; overflow: hidden; height: 100vh">
     <div class="flex flex-grow flex-col p-4 border-r">
-        <!-- Title area -->
-        <div class="mb-4 bg-yellow-400 rounded-md p-3">
-            <h2 class="text-xl text-center">
-                <span class="text-4xl font-mono font-bold py-1 px-4">Perspectiva</span>
-                <span class="text-2xl">Causal Loop Diagram</span>
-            </h2>
-        </div>
-        <!-- Diagram area -->
-        <div id="cy" class="flex-grow bg-gray-100 rounded-md p-6 overflow-auto">
-        </div>
+      <!-- Title area -->
+      <div class="mb-4 bg-yellow-400 rounded-md p-3">
+        <h2 class="text-xl text-center">
+          <span class="text-4xl font-mono font-bold py-1 px-4"
+            >Perspectiva</span
+          >
+          <span class="text-2xl">Causal Loop Diagram</span>
+        </h2>
+      </div>
+      <!-- Diagram area -->
+      <div
+        id="cy"
+        class="flex-grow bg-gray-100 rounded-md p-6 overflow-auto"
+      ></div>
     </div>
 
     <!-- Sidebar for legend and timeline -->
     <div class="w-64 bg-gray-50 p-4 shadow-lg">
-        <!-- Legend -->
-        <div class="bg-white border rounded-md p-2 mb-8">
-            <h4 class="text-lg font-semibold mb-2">Legend</h4>
-            <!-- Legend items -->
-            <div id="legend1" class="space-y-2">
-                <div class="legend-item py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer"
-                    data-node-type="primary">primary</div>
-                <div class="legend-item py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer"
-                    data-node-type="secondary">secondary</div>
-                <!-- More legend items as needed -->
-            </div>
+      <!-- Legend -->
+      <div class="bg-white border rounded-md p-2 mb-8">
+        <h4 class="text-lg font-semibold mb-2">Legend</h4>
+        <!-- Legend items -->
+        <div id="legend1" class="space-y-2">
+          <div
+            class="legend-item py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer"
+            data-node-type="primary"
+          >
+            primary
+          </div>
+          <div
+            class="legend-item py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer"
+            data-node-type="secondary"
+          >
+            secondary
+          </div>
+          <!-- More legend items as needed -->
         </div>
-        <div class="bg-white border rounded-md p-2 mb-8">
-            <h4 class="text-lg font-semibold mb-2">Legend</h4>
-            <!-- Legend items -->
-            <div id="legend2" class="space-y-2">
-                <div id="btn-final" class="legend-item py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer"
-                    data-version="final">Final</div>
-                <div id="btn-a1" class="legend-item py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer"
-                    data-version="origin_advocate_1">
-                    Advocate 1</div>
-                <div id="btn-a2" class="legend-item py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer"
-                    data-version="origin_advocate_2">
-                    Advocate 2</div>
-                <div id="btn-cc3" class="legend-item py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded cursor-pointer"
-                    data-version="origin_city_council_3">City Council
-                    3</div>
-                <!-- More legend items as needed -->
-            </div>
+      </div>
+      <div class="bg-white border rounded-md p-2 mb-8">
+        <h4 class="text-lg font-semibold mb-2">Legend</h4>
+        <!-- Legend items -->
+        <div id="version-control" class="space-y-2">
+          <!-- More legend items as needed -->
         </div>
-
+      </div>
     </div>
+  </body>
 
-
-    </div>
-
-</body>
-
-<script src="graph.js"></script>
-
-
+  <script src="main.js" type="module"></script>
 </html>
