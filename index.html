@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perspectiva Causal Loop Diagram</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/cytoscape@latest/dist/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>
+    <script src="https://unpkg.com/cytoscape-cola/cytoscape-cola.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.js"></script>
+    <script src="cytoscape-edgehandles.js"></script> -->
+
+
+</head>
+
+<body class="flex h-screen overflow-hidden">
+
+    <div class="flex flex-grow flex-col p-4 border-r">
+        <!-- Title area -->
+        <div class="mb-4 bg-yellow-400 rounded-md p-3">
+            <h2 class="text-xl text-center">
+                <span class="text-4xl font-mono font-bold py-1 px-4">Perspectiva</span>
+                <span class="text-2xl">Causal Loop Diagram</span>
+            </h2>
+        </div>
+        <!-- Diagram area -->
+        <div id="cy" class="flex-grow bg-gray-100 rounded-md p-6 overflow-auto">
+        </div>
+    </div>
+
+    <!-- Sidebar for legend and timeline -->
+    <div class="w-64 bg-gray-50 p-4 shadow-lg">
+        <!-- Legend -->
+        <div class="bg-white border rounded-md p-2 mb-8">
+            <h4 class="text-lg font-semibold">Legend</h4>
+            <!-- Legend items -->
+        </div>
+
+
+    </div>
+
+</body>
+
+<script src="graph.js"></script>
+
+
+</html>
